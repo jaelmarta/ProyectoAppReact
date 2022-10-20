@@ -1,5 +1,4 @@
 import React from "react"
-import Nav from "./Nav"
 
 const Footer = () => {
     return (
@@ -9,11 +8,8 @@ const Footer = () => {
                 <a href="https://www.instagram.com/">instagram</a>
                 <a href="https://www.twitter.com/">twitter</a>
             </div>
-            <div>
-                <Nav/>
-            </div>
         </footer>
     )
 }
 
-export default footer
+export default Footer

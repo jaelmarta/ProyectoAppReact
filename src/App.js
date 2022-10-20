@@ -1,6 +1,6 @@
 import React from "react"
-import NavBar from "./components/NavBar"
-import Main from "./components/Main"
+import Header from "./components/Header"
+import ItemListContainer from "./components/ItemListContainer"
 import Footer from "./components/Footer"
 
 
@@ -8,9 +8,11 @@ function App() {
 
     return (
         <>
-            <NavBar />
-            <Main />
-            <Footer />
+            <Header/>
+            <ItemListContainer
+            title="JM Vintage Store"
+            />
+            <Footer/>
         </>
     )
 }

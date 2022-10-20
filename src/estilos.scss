@@ -1,16 +1,19 @@
-$color-primary: yellow;
+$color-primary:#BDA2A2;
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@500&family=Assistant:wght@200&family=Maven+Pro:wght@500&family=Quicksand:wght@300;400&family=Varta:wght@300&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Trispace', sans-serif;
 }
 
-//google material icons import
-@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-
-html , body , #root {
+html,
+body,
+#root {
     height: 100%;
 }
 
@@ -19,14 +22,32 @@ html , body , #root {
     flex-direction: column;
 }
 
+#addCart {
+    display: flex;
+    justify-content: center;
+}
 
-#main-header {
+header {
     background-color: $color-primary;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    justify-content: space-around;
+    box-shadow: 0 0 10px $color-primary;
     padding: 0.5rem 1rem;
+
+    a {
+        text-decoration: none;
+        color: white;
+        display: inline-block;
+        border: 2px #faf5c8;
+        padding: 15px 30px;
+        font-size: 16px;
+
+        &:hover {
+            color: black;
+
+        }
+
+    }
 }
 
 main {
