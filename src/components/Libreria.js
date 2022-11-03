@@ -20,7 +20,7 @@ import {randProduct} from "@ngneat/falso"
 
 export const obtenerProductos = () => cargaProductos(listaProductos)
 	
-export const productoPorCategoria = (id) => cargaProductos(listaProductos.filter(item=>item.category === id))
+export const productoPorCategoria = (id) => cargaProductos(listaProductos.filter(item=>item.category == id))
 
 export const productoPorId = (id) => cargaProductos(listaProductos.filter(item=>item.id === id))
 
