@@ -8,7 +8,7 @@ function Header(prop) {
     return (
     <header id="main-header" className="header">
         <Link to="/">
-            <img className="logo" src="/img/logo.jpg"/>
+            <img className="logo" src="/img/logo.jpeg" alt=""/>
         </Link>
         <NavBar/>
     </header>
