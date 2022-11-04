@@ -1,7 +1,7 @@
 import ItemDetail from "./ItemDetail"
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { productoPorId } from "./libreria.js"
+import { productoPorId } from "./Libreria.js"
 
 const ItemDetailContainer = () => {
 const [items, setItems] = useState([]) 

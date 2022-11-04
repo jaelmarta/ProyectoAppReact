@@ -1,4 +1,3 @@
-ItemCount.js
 
 const ItemCount = () => {
 
