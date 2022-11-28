@@ -22,9 +22,17 @@ body,
     flex-direction: column;
 }
 
-#addCart {
+#cartWidget {
     display: flex;
     justify-content: center;
+}
+
+.threeDots {
+    height:80;
+    width:80;
+    radius:9;
+    color:black;
+
 }
 
 header {

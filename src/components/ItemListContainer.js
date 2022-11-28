@@ -1,45 +1,64 @@
-import { useEffect, useState } from "react"
-import { useParams } from "react-router-dom"
-import ItemList from "./ItemList"
-import { obtenerProductos, productoPorCategoria} from "./Libreria.js"
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import ItemList from "./ItemList";
+import { obtenerProductos, productoPorCategoria } from "./Libreria.js";
+import { ThreeDots } from "react-loader-spinner";
+import { db } from "../firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 
 const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const { category } = useParams();
 
-    const [items, setItems] = useState([]) 
-    const {category} = useParams() 
+  useEffect(() => {
+    const productosPorColeccion = collection(db, "productos");
 
-    useEffect(() => {
+    if (category) {
+      const filtro = query(
+        productosPorColeccion,
+        where("category", "==", category)
+      );
 
-        if(category){
+      const consulta = getDocs(filtro);
 
-            productoPorCategoria(category) 
-            .then(res => {
-                setItems(res)
-            })
-            .catch(err => {
-                console.log(err)
-            })
+      consulta
+        .then((resultado) => {
+          const productos = resultado.docs.map((doc) => ({
+            ...doc.data(),
+            id: doc.id,
+          }));
+          setItems(productos);
+        })
 
-        }else{
+        .catch((error) => {
+          console.log(error);
+        });
+    } else {
+      const consulta = getDocs(productosPorColeccion);
 
-            obtenerProductos()
-            .then((respuesta) => {
-                setItems(respuesta)
-            })
-            .catch((error) => {
-                console.log(error)
-            })
-        }
+      consulta
+        .then((resultado) => {
+          const productos = resultado.docs.map((doc) => ({...doc.data(),id: doc.id,}));
+          console.log(productos);
+          setItems(productos);
+        })
 
-    }, [category])
+        .catch((error) => {
+          console.log(error);
+        });
+    }
+  }, [category]);
 
-    return (
-        <div>
-            <h2>Productos</h2>
-            {items.length === 0 ? <h1>Cargando...</h1> : <ItemList items={items} />}
-        </div>
-    )
+  return (
+    <div>
+      <h2>Productos</h2>
+      {items.length === 0 ? (
+        <ThreeDots className="threeDots" />
+      ) : (
+        <ItemList items={items} />
+      )}
+    </div>
+  );
+};
 
-}
-
-export default ItemListContainer
+export default ItemListContainer;

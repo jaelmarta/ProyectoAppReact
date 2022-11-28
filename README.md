@@ -1,3 +1,26 @@
+# Entrega Final React CODERHOUSE
+Mi nombre es Jael Marta y este es mi proyecto para el curso de REACT.
+Primero debe dirigirse al repositorio alojado en "https://github.com/jaelmarta/ProyectoAppReact"
+
+## NPM instalados
+Para poder utilizar correctamente el proyecto necesitara tener instaladas las siguientes librerias:
+    "@emotion/react": "^11.10.4", (default de create-react-app)
+    "@emotion/styled": "^11.10.4", (default de create-react-app)
+    "@mui/material": "^5.10.10", (iconos)
+    "@ngneat/falso": "^6.1.0", (productos random para pruebas)
+    "@testing-library/jest-dom": "^5.16.5", (default de create-react-app)
+    "@testing-library/react": "^13.4.0", (default de create-react-app)
+    "@testing-library/user-event": "^13.5.0", (default de create-react-app)
+    "firebase": "^9.14.0", (base de datos)
+    "react": "^18.2.0", (default de create-react-app)
+    "react-dom": "^18.2.0", (default de create-react-app)
+    "react-loader-spinner": "^5.3.4", (gif loader)
+    "react-router-dom": "^6.4.3", (enrutador)
+    "react-scripts": "5.0.1", (default de create-react-app)
+    "sass": "^1.55.0", (hoja de estilos)
+    "web-vitals": "^2.1.4" (default de create-react-app)
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
